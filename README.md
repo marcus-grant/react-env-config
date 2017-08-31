@@ -89,6 +89,9 @@ module.exports = {
 - The `"scripts":` key above should have a dictionary in its value that specified key-value pairs of script names *(ie some_fancy_script like above)* that get referred to after the `npm` command
 - The value in the `"scripts"` dictionary is command that gets called whenever they key of that entry in the dictionary is invoked
   - even though `webpack` can't be invoked globally from the shell, it should now be installed as a node module, so node will be able to access it by name
+- name isn't terribly consequential, not sure where it's ever used
+- version is just a way to track developmental versions
+- main ?
 
 ### Input & Output Locations
 - It's useful to seperate the source code to React applications and the compiled output
@@ -205,7 +208,7 @@ yarn add webpack-dev-server --dev
 ```javascript
 ...
 devServer: {
-  contentBase: path.resolve(--dirname, "dist")
+  contentBase: path.resolve(__dirname, "dist")
 }
 ...
 ```
